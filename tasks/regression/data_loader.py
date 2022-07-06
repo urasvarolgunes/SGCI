@@ -34,6 +34,7 @@ def load_data(aff, semantic, delta, spanning=True, n_jobs=-1, num_folds=5, num_t
 
     graph_path = './saved_graphs/adj_{}_{}_{}_seed{}.npy'.format(semantic, aff, delta, seed)
     if not os.path.exists(graph_path):
+        print('generating graph, may take a while...')
         Q_index = range(features.shape[0])
         dis = multicore_dis(features, Q_index, n_jobs)
         graph = MSTKNN(dis, Q_index, delta, n_jobs, spanning)

@@ -85,8 +85,12 @@ def run_training(fold, params):
 
     # Build a word graph using the affinity matrix
     adj, features, labels, idx_test, folds_dict = load_data(
-        aff=args.aff, semantic=args.base, delta=args.delta, m=args.m,
-        num_folds=args.num_folds, num_train=args.num_train, seed=args.seed)
+        aff=args.aff,
+        semantic=args.base,
+        delta=args.delta,
+        num_folds=args.num_folds,
+        num_train=args.num_train,
+        seed=args.seed)
     
     features = torch.FloatTensor(features)
     labels = torch.FloatTensor(labels)

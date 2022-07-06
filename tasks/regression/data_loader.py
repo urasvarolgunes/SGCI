@@ -11,7 +11,7 @@ import multiprocessing as mp
 from sklearn.model_selection import StratifiedKFold, KFold
 import os
 
-def load_data(aff, semantic, delta, m=200, spanning=True, n_jobs=-1, num_folds=5, num_train=500, seed=42):
+def load_data(aff, semantic, delta, spanning=True, n_jobs=-1, num_folds=5, num_train=500, seed=42):
     """Build the adjacency matrix, node features and ids dictionary."""
     total_cpu = mp.cpu_count()
     if type(n_jobs) is not int or n_jobs < -1 or n_jobs > total_cpu:

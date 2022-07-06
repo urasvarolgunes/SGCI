@@ -2,7 +2,7 @@ import numpy as np
 import sys
 sys.path.append("../../model")
 from lsi import iterSolveQ
-from data_loader import load_data_lsi
+from data_loader import load_data
 from sklearn.neighbors import KNeighborsClassifier
 
 
@@ -37,6 +37,8 @@ if __name__ == '__main__':
     delta = int(sys.argv[3])
     np.random.seed(int(sys.argv[4]))
 
-    adj, features, labels, y, idx_train = load_data_lsi(affname, basename, delta)
+    #adj, features, labels, y, idx_train = load_data_lsi(affname, basename, delta)
+    adj, features, labels, y, folds_dict = load_data(affname, basename, delta)
+    idx_train = list(range(len(labels)))
     PQ = iterSolveQ(labels[idx_train], adj, 1e-3)
     print(test(PQ, y), '\n')

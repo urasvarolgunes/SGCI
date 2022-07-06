@@ -8,7 +8,8 @@ and place them under ./data.
 
 Your data directory should look like:
 
-* ./data
+* SGCI
+* --data/
 * ------fin_small
 * ------fin
 * ------regression

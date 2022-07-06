@@ -49,7 +49,7 @@ parser.add_argument('--aff', type=str, default='aff',
 parser.add_argument('--model', type=str, default='SGC',
                     choices=['MLP', 'SGC'])
 parser.add_argument('--num_folds', type=int, default=5)
-parser.add_argument('--n_trials', type=int, default=100)
+parser.add_argument('--n_trials', type=int, default=2)
 
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
@@ -63,7 +63,6 @@ def train(model, optimizer, epoch, idx_train, features, labels):
     output = model(features, indices)
     
     loss_train = mse_loss(output, labels[indices])
-    print(loss_train.item())
     loss_train.backward()
     optimizer.step()
     
@@ -103,7 +102,7 @@ def test_KNN(model, features, labels, y, idx_test, idx_train=None):
             y = y[torch.cat([idx_train, idx_test])] #idx_test=idx_valid in this case
         
         X = X.cpu().detach().numpy()
-        y = y.cpu().detach().numpy()
+
         result = []
         for n in N: # classification n_neighbors = 5, n_components = 30 up
             result.append(KNN(X.copy(), y.copy(), n))

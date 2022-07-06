@@ -45,11 +45,11 @@ def load_data(aff, semantic, delta, ita=1e-4, spanning=True, n_jobs=-1, num_fold
     labels = labels.values
     idx_train = np.array(range(labels.shape[0]))
     
-    if not os.path.exists('./{}_{}_fold_dict.npy'.format(semantic, num_folds)):
+    if not os.path.exists('./saved_folds/{}_{}_fold_dict.npy'.format(semantic, num_folds)):
         folds_dict = get_kfold_split(X=features[idx_train] ,y=y[idx_train], k=num_folds) #X is just a placeholder
-        np.save('{}_{}_fold_dict.npy'.format(semantic, num_folds), folds_dict)
+        np.save('./saved_folds/{}_{}_fold_dict.npy'.format(semantic, num_folds), folds_dict)
     
-    folds_dict = np.load('{}_{}_fold_dict.npy'.format(semantic, num_folds), allow_pickle=True).item()
+    folds_dict = np.load('./saved_folds/{}_{}_fold_dict.npy'.format(semantic, num_folds), allow_pickle=True).item()
         
     return adj, features, labels, y, folds_dict
 

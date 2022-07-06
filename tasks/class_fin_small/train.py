@@ -49,7 +49,7 @@ parser.add_argument('--aff', type=str, default='aff',
 parser.add_argument('--model', type=str, default='SGC',
                     choices=['MLP', 'SGC'])
 parser.add_argument('--num_folds', type=int, default=5)
-parser.add_argument('--n_trials', type=int, default=2)
+parser.add_argument('--n_trials', type=int, default=100)
 
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()

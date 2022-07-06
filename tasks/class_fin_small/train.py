@@ -46,7 +46,7 @@ parser.add_argument('--base', type=str, default='google',
                     help='base embedding: self, selfhf, google, glove, fast')
 parser.add_argument('--aff', type=str, default='aff',
                     help='affinity info: aff, google, glove, fast')
-parser.add_argument('--model', type=str, default='MLP',
+parser.add_argument('--model', type=str, default='SGC',
                     choices=['MLP', 'SGC'])
 parser.add_argument('--num_folds', type=int, default=5)
 parser.add_argument('--n_trials', type=int, default=100)

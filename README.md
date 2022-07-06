@@ -1,6 +1,6 @@
-## Large Datasets
+## Datasets
 
-Both finance datasets is provided in the repo.
+Both large and small finance datasets are provided in the repo.
 If you want to run the experiments for the regression datasets:
 download the folder called 'regression' from:
 ```https://drive.google.com/drive/folders/1dVR6VAktbEyITa-LXVhNM5Z720VgmZ6W?usp=sharing```
@@ -8,11 +8,11 @@ and place them under ./data.
 
 Your data directory should look like:
 
-./data
-    fin_small
-    fin
-    regression
-    raw_embedding
+* ./data
+* ------fin_small
+* ------fin
+* ------regression
+* ------raw_embedding
 
 
 We provide the processed datasets, but if you wish to recreate them from scratch, place the pretrained embedding files in data/raw_embedding

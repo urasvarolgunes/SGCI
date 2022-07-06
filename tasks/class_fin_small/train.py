@@ -43,7 +43,7 @@ parser.add_argument('--alpha', type=float, default=0.0,
 parser.add_argument('--delta', type=int, default=8,
                     help='node degree setting in MST-KNN graph')
 parser.add_argument('--base', type=str, default='google',
-                    help='base embedding: self, selfhf, google, glove, fast')
+                    help='base embedding: google, glove, fast')
 parser.add_argument('--aff', type=str, default='aff',
                     help='affinity info: aff, google, glove, fast')
 parser.add_argument('--model', type=str, default='SGC',
@@ -63,6 +63,7 @@ def train(model, optimizer, epoch, idx_train, features, labels):
     output = model(features, indices)
     
     loss_train = mse_loss(output, labels[indices])
+    print(loss_train.item())
     loss_train.backward()
     optimizer.step()
     
@@ -100,7 +101,9 @@ def test_KNN(model, features, labels, y, idx_test, idx_train=None):
         else: #evaluating on train+val set
             X = torch.cat((labels[idx_train], pred), dim=0)
             y = y[torch.cat([idx_train, idx_test])] #idx_test=idx_valid in this case
+        
         X = X.cpu().detach().numpy()
+        y = y.cpu().detach().numpy()
         result = []
         for n in N: # classification n_neighbors = 5, n_components = 30 up
             result.append(KNN(X.copy(), y.copy(), n))

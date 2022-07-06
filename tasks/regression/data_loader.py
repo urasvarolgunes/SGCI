@@ -5,7 +5,6 @@ import sys
 sys.path.append("../../model")
 sys.path.append("../../")
 from hpc import multicore_dis, MSTKNN, multicore_nnls
-from anchor import getAnchorIndex, distanceAnchorEuclidean, anchorKNN
 from utils import *
 import multiprocessing as mp
 from sklearn.model_selection import StratifiedKFold, KFold

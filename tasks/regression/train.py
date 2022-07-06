@@ -30,11 +30,11 @@ parser.add_argument('--alpha', type=float, default=0.0, help='Teleport strength.
 parser.add_argument('--delta', type=int, default=10, help='node degree setting in MST-KNN graph')
 parser.add_argument('--base', type=str, default='google', help='base embedding: google, glove, fasttext')
 parser.add_argument('--aff', type=str, default='glove', help='affinity info: glove...')
-parser.add_argument('--num_trials', type=int, default=2, help='how many different seeds to run with')
+parser.add_argument('--num_trials', type=int, default=1, help='how many different seeds to run with')
 parser.add_argument('--model', type=str, default='SGC',
                     choices=['MLP', 'SGC'])
 parser.add_argument('--num_folds', type=int, default=5)
-parser.add_argument('--n_trials', type=int, default=100)
+parser.add_argument('--n_trials', type=int, default=2, help='number of trials for optuna')
 parser.add_argument('--num_train', type=int, default=500)
 
 args = parser.parse_args()

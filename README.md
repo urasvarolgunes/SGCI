@@ -8,12 +8,12 @@ and place them under ./data.
 
 Your data directory should look like:
 
-* | SGCI/
-*   |--data/
-*       |--fin_small
-*       |--fin
-*       |--regression
-*       |--raw_embedding
+* SGCI/
+* ----data/
+* ------fin_small/
+* ------fin/
+* ------regression/
+* ------raw_embedding/
 
 
 We provide the processed datasets, but if you wish to recreate them from scratch, place the pretrained embedding files in data/raw_embedding

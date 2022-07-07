@@ -4,7 +4,7 @@ Both large and small finance datasets are provided in the repo.
 If you want to run the experiments for the regression datasets:
 download the folder called 'regression' from:
 ```https://drive.google.com/drive/folders/1dVR6VAktbEyITa-LXVhNM5Z720VgmZ6W?usp=sharing```
-and place them under ./data.
+and place it under ./data.
 
 Your data directory should look like:
 
@@ -40,3 +40,5 @@ embedding name can be 'google', 'glove' or 'fast'
 * [`scikit-learn`] version 0.24.2
 * [`pandas`] version 1.1.5
 * [`optuna`] 2.10.1
+
+## For the lanuage modeling experiment on Section 6.1, go to ```https://github.com/ShiboYao/LatentSemanticImputation```

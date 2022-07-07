@@ -119,7 +119,7 @@ def show_params(args):
 
 def run_training(fold, params, testing=False, use_all_train=False):
     '''runs training for one on the folds'''
-    result = {n:[] for n in [2]} #[2,5,8,10,15,20,30]
+    result = {n:[] for n in [2,5,8,10,15,20,30]}
     
     adj, features, labels, y, folds_dict = load_data(args.aff, args.base, args.delta, num_folds=args.num_folds)
     features = torch.FloatTensor(features)

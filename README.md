@@ -41,4 +41,4 @@ embedding name can be 'google', 'glove' or 'fast'
 * [`pandas`] version 1.1.5
 * [`optuna`] 2.10.1
 
-## For the lanuage modeling experiment on Section 6.1, go to ```https://github.com/ShiboYao/LatentSemanticImputation```
+##### For the lanuage modeling experiment on Section 6.1, go to ```https://github.com/ShiboYao/LatentSemanticImputation```
